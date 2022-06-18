@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.crs.ibm.bean.Course;
+import com.crs.ibm.bean.Student;
 import com.crs.ibm.constant.SQLQueryConstant;
 import com.crs.ibm.exception.CourseNotAdded;
 import com.crs.ibm.exception.CourseNotFound;
@@ -17,7 +21,8 @@ import com.crs.ibm.exception.NotRegister;
 import com.crs.ibm.exception.NotRemoved;
 import com.crs.ibm.utils.DBUtils;
 import com.mysql.jdbc.Statement;
-
+@ResponseBody
+@Repository
 public class StudentDAO implements StudentDAOInterface{
 	Connection conn = null;
 	static int recsid=0;

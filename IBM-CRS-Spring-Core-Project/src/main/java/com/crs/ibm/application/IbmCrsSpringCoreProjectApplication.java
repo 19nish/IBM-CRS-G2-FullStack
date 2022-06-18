@@ -2,10 +2,12 @@ package com.crs.ibm.application;
 
 import java.util.Scanner;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -22,10 +24,10 @@ import com.crs.ibm.service.UserInterface;
 @Configuration
 @EnableAutoConfiguration
 @SpringBootApplication
-@Import((ApplicationConfig.class))
 public class IbmCrsSpringCoreProjectApplication {
 
 	public static void main(String[] args) {
+		SpringApplication.run(IbmCrsSpringCoreProjectApplication.class, args);
 		ApplicationContext context=SpringApplication.run(ApplicationConfig.class);
 		
 		UserInterface user= (UserInterface) context.getBean("userBean");
